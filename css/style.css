@@ -1,28 +1,31 @@
 body {
-    background: black;
-    color: aliceblue;
+    background: linear-gradient(150.56deg, #437de2 0%, #16f9c1 100%);
+    color: #16f9c1;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
 }
 
-.content {
+.conteudo {
     margin: 0 auto;
-    width: 100%;
+    width: 100%;;
     max-width: 450px;
     margin-top: 50px;
     margin-bottom: 50px;
-    background: #2b2a2a;
+    background: #2158b8;
     padding: 55px;
     border-radius: 12px;
 }
 
-.top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 35px;
+.topo {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 35px;     
 }
 
-.top input {
+.topo input {
     width: 350px;
     padding: 15px;
     border-radius: 12px;
@@ -30,30 +33,38 @@ body {
     outline: none;
     font-size: 1.2rem;
     background: #191818;
-    color: aliceblue;
+    color: #16f9c1;
 }
 
-.top button {
+.topo button {
     width: 45px;
     border-radius: 12px;
     border: 1px solid #191818;
     background: #191818;
-    color: aliceblue;
+    color: #44ffd0;
     outline: none;
+    transition: 0.5s;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.0em;
+    font-weight: 400;
 }
 
-.top button:hover {
-    background: #1f1e1e;
-    cursor: pointer;
+.topo button:hover {
+    background: var(--clr);
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px var(--clr);
 }
 
-#taskList {
+#listaTarefas {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-#taskList li {
+#listaTarefas li {
     padding: 20px;
     background: #191818;
     border-radius: 12px;
@@ -63,27 +74,37 @@ body {
     margin-top: 20px;
 }
 
-.btnAction {
-    border-radius: 12px;
+.btnAcao {
+    border-radius: 20px;
     border: 1px solid #191818;
     width: 38px;
     height: 38px;
     margin-right: 8px;
     cursor: pointer;
     background: #2b2a2a;
-    color: aliceblue;
+    color: #16f9c1;
     outline: none;
+    display: inline-block;
+    overflow: hidden;
+    animation: btn-anim1 1s linear infinite;
 }
 
-.btnAction:hover {
+.btnAcao:hover {
     background: #3c3a3a;
 }
 
-#windowEditor {
+.textoTarefa {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 290px;
+    white-space: nowrap;
+}
+
+#janelaEdicao {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     padding: 20px;
     background: #191818;
     border: 1px solid #2f2e2e;
@@ -93,24 +114,37 @@ body {
     display: none;
 }
 
-#windowEditor.open {
+#janelaEdicao.abrir {
     display: block !important;
 }
 
-#windowEditorBack {
+#janelaEdicaoFundo {
     position: fixed;
     top: 0;
-    background-color: black;
+    background-color: #000;
     bottom: 0;
     left: 0;
     opacity: 0.9;
     z-index: 100;
     right: 0;
-
+    display: none;
 }
 
-#windowEditorBack.open {
-    display: block !important;   
+#janelaEdicaoFundo.abrir {
+   display: block !important;    
+}
+
+#janelaEdicaoBtnFechar {
+    position: absolute;
+    top: -25px;
+    right: -18px; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #2d2c2c;
+    background: #2d2c2c;
+    color: #16f9c1;
+    outline: none;
 }
 
 form {
@@ -118,36 +152,39 @@ form {
     margin-top: 20px;
 }
 
-.frm-line {
+.frm-linha {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.frm-line label {
+.frm-linha label {
     margin-bottom: 7px;
 }
 
-.frm-line input {
+.frm-linha input {
     padding: 15px;
     border-radius: 12px;
     outline: none;
     border: 1px solid #191818;
     font-size: 1.2rem;
     background: #2d2c2c;
-    color: aliceblue;
+    color: #16f9c1;
 }
 
-.frm-line button {
+.frm-linha button {
     background: #2d2c2c;
     border: 1px solid #191818;
     padding: 7px;
     margin-bottom: 10px;
     border-radius: 12px;
-    color: aliceblue;
+    color: #16f9c1;
     cursor: pointer;
     height: 50px;
     font-size: 1.3rem;
     outline: none;
 }
 
+.frm-linha button:hover {
+    background: #3c3a3a;
+}
